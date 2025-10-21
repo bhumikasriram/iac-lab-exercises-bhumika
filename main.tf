@@ -1,11 +1,11 @@
 resource "aws_vpc" "main" {
   cidr_block       = "192.168.1.0/25"
+  instance_tenancy = "default"
   enable_dns_support = "true"
   enable_dns_hostnames = "true"
-  instance_tenancy = "default"
 
   tags = {
-    Name = "bhumika"
+    Name = "iac-lab-bhumika"
   }
 }
 
@@ -19,6 +19,5 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-southeast-2"
-  profile = "twbeach"
+  region = "ap-southeast-1"
 }
